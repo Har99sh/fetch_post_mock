@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>POST with Fetch</title>
+</head>
+
+<body>
+    <form method="post" id="post_form">
+        <input id="text" placeholder="Description" type="text" maxlength="50" />
+        <input id="image" placeholder="Image url" type="url" />
+        <input id="likes" placeholder="Number of likes" type="number" />
+        <input id="tags" placeholder="Tags" type="arra" />
+        <input id="owner" placeholder="Owner id" type="" />
+        <input id="submit" type="submit" />
+    </form>
+
+    <!-- owner:
+    firstName: "Sara"
+    id: "60d0fe4f5311236168a109ca"
+    lastName: "Andersen"
+    picture: "https://randomuser.me/api/portraits/women/58.jpg"
+    title: "ms" -->
+
+
+    <div class="form-data-container" id="form_data_container">
+        <div class="image-container" id="displayed_image"></div>
+        <div class="displayed-description" id="displayed_description"></div>
+        <div class="displayed-likes" id="displayed_likes"></div>
+        <div class="displayed-tags" id="displayed_tags"></div>
+        <div class="displayed-id" id="displayed_id"></div>
+    </div>
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
