@@ -1,6 +1,6 @@
-var form = document.getElementById('post_form')
+var form = $('#post_form');
 
-form.addEventListener('submit', function (e) {
+form.on('submit', function (e) {
     e.preventDefault();
     var text = $('#text').val();
     var image = $('#image').val();
@@ -10,7 +10,7 @@ form.addEventListener('submit', function (e) {
     fetch('https://dummyapi.io/data/v1/post/create', {
         method: 'POST',
         body: JSON.stringify({
-            text: text, 
+            text: text,
             image: image,
             likes: likes,
             tags: tags,
@@ -18,7 +18,7 @@ form.addEventListener('submit', function (e) {
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
-            'app-id': '62d44551e5e49fe7181a7e38'
+            'app-id': '62d66fc4c969fb16259d04b6'
         }
     })
         .then(function (response) {
@@ -34,39 +34,14 @@ form.addEventListener('submit', function (e) {
             $("#displayed_tags").html('Tags: ' + data.tags);
             $("#displayed_id").html('Owner name: ' + data.owner.firstName + ' ' + data.owner.lastName);
             $("#displayed_image").css({ 'background-image': 'url(' + data.image + ')' });
-
         })
-        .then(fetch('https://dummyapi.io/data/v1/post', { headers: { 'app-id': '62d44551e5e49fe7181a7e38' } })
+        .then(fetch('https://dummyapi.io/data/v1/post',
+            { headers: { 'app-id': '62d66fc4c969fb16259d04b6' } })
             .then(response => response.json())
             .then(json => {
                 console.table(json);
             }))
-
 });
-
-
-
-
-
-
-
-
-// fetch('https://dummyapi.io/data/v1/post', {
-//     headers: {
-//         'Content-type': 'application/json; charset=UTF-8',
-//         'app-id': '62d425219eb7300f34d8e4fa'
-//     }
-// })
-//     .then(function (response) {
-//         return response.json()
-//     })
-//     .then(function (data) {
-//         console.log(data)
-
-//     }).catch(error => console.error('Error:', error)); 
-
-
-
 
 
 
